@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --bg1: #f6fcfa;
+  --bg2: #eef8f4;
+  --mint: #7bd3b6;
+  --muted: #6b6b6b;
+  --glass: rgba(255,255,255,0.55);
+  --glass-strong: rgba(255,255,255,0.72);
+}
+
+*{box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+
+/* Page background */
+body{
+  min-height:100vh;
+  margin:0;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Container */
+.container{
+  max-width:1100px;
+  margin:36px auto;
+  padding:28px;
+}
+
+/* Navbar kept visually similar but slightly lifted */
+.navbar {
+  background: rgba(20,20,20,0.95) !important;
+  box-shadow: 0 6px 20px rgba(15,15,15,0.15);
+  border-radius: 10px;
+  margin: 10px auto;
+  max-width:1100px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+/* Card / glass */
+.glass {
+  background: var(--glass);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(30,30,30,0.06);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.6);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.glass:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(30,30,30,0.09);
+}
+
+/* Form styles */
+label { font-weight:600; color: #2b2b2b; }
+.form-control {
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.9);
+  padding: 12px 14px;
+  box-shadow: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, #6ccfb1, #4fc09b);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(79,192,155,0.18);
+}
+.btn-primary:hover { transform: translateY(-2px); }
+
+/* Note card */
+.note-card {
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding:14px;
+  margin:10px;
+  width: 18rem;
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+.note-card h5{ margin:0 0 8px 0; font-size:1.05rem; }
+.note-card p{ color: var(--muted); font-size:0.95rem; margin-bottom:12px; }
+
+/* Empty notes fallback */
+.mynotes .empty {
+  color: var(--muted);
+  padding: 12px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .note-card { width: 100%; }
+  .container { padding: 12px; }
+  .navbar { margin-left:8px; margin-right:8px; }
+}
